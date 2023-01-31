@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dbt_raw
+    description: DBT blog source
+    database: blog_dbt
+    schema: dbt_raw
+    tables:
+        - name: listing
