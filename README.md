@@ -2,6 +2,7 @@ Suppose you are in a database named BLOG_DBT.
 
 # Examples of the 1st part can be execute with
 
+```
 -- Create schemas
 create or replace schema BLOG_DBT.DBT_RAW;
 create or replace schema BLOG_DBT.DBT_SNAPSHOT;
@@ -32,11 +33,12 @@ where id = 1;
 -- Execute dbt command in dbt
 -- dbt snapshot -s test_strategy
 select * from BLOG_DBT.DBT_SNAPSHOT.TEST_STRATEGY;
-
+```
 
 
 # Examples of the 2nd part can be execute with
 
+```
 -- Create source objects
 use schema BLOG_DBT.DBT_RAW;
 
@@ -90,4 +92,4 @@ where list_id=776;
 -- Execute dbt command in dbt
 select * from dbt_snapshot.listing;
 select * from dbt_mdl.dim_listing;
-
+```
