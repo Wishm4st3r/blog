@@ -1,6 +1,20 @@
-Suppose you are in a database named BLOG_DBT.
+Suppose you are in a Snowflake database named BLOG_DBT.
 
-# Examples of the 1st part can be execute with
+# 1st part : Custom Snapshot macro
+
+## List of Snowflake objects 
+
+### Sources
+- BLOG_DBT.DBT_RAW.TEST_STRATEGY
+
+### Targets
+- BLOG_DBT.DBT_SNAPSHOT.TEST_STRATEGY
+
+## List of dbt objects involved
+- macros/snapshot_helpers__mystrategy.sql
+- snapshots/test_strategy.sql
+
+## Commands for testing (Snowflake/dbt commands)
 
 ```
 -- Create schemas
@@ -36,7 +50,25 @@ select * from BLOG_DBT.DBT_SNAPSHOT.TEST_STRATEGY;
 ```
 
 
-# Examples of the 2nd part can be execute with
+# 2nd part : Custom Snapshot macro
+
+## List of Snowflake objects 
+
+### Sources
+- BLOG_DBT.DBT_RAW.LISTING
+
+### Targets
+- BLOG_DBT.DBT_SNAPSHOT.LISTING
+- BLOG_DBT.DBT_MDL.DIM_LISTING
+
+## List of dbt objects involved
+- macros/dim_type_1_cols.sql
+- macros/dim_update_timestamp.sql
+- models/staging/blog_src/src_listing.yml
+- snapshots/listing.sql
+- models/marts/dim_listing.sql
+
+## Commands for testing (Snowflake/dbt commands)
 
 ```
 -- Create source objects
