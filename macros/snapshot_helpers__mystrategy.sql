@@ -31,6 +31,7 @@
 
     {% set scd_id_expr = snapshot_hash_arguments([primary_key, updated_at]) %}
 
+    {# Setting set_valid_to_9999 to true will allow us to change behaviour in other macros when we need #}
     {% do return({
         "unique_key": primary_key,
         "updated_at": updated_at,
